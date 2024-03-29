@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from hello_world import app
+from services.hello_world import app
 
 def lambda_context():
     class LambdaContext:
