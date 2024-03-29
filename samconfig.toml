@@ -4,7 +4,7 @@ version = 0.1
 
 [default]
 [default.global.parameters]
-stack_name = "sls-private-email-relay"
+stack_name = "sls-python3-poetry-template"
 
 [default.build.parameters]
 cached = true

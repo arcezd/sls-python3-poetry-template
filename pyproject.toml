@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "sls-private-email-relay"
+name = "sls-python3-poetry-template"
 version = "0.1.0"
 description = ""
 authors = ["Diego Arce <diego@arce.cr>"]

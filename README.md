@@ -1,4 +1,4 @@
-# sls-private-email-relay
+# sls-python3-poetry-template
 
 Congratulations, you have just created a Serverless "Hello World" application using the AWS Serverless Application Model (AWS SAM) for the `python3.12` runtime, and options to bootstrap it with [**AWS Lambda Powertools for Python**](https://awslabs.github.io/aws-lambda-powertools-python/latest/) (Lambda Powertools) utilities for Logging, Tracing and Metrics.
 
@@ -88,7 +88,7 @@ You can find your API Gateway Endpoint URL in the output values displayed after 
 Build your application with the `sam build --use-container` command.
 
 ```bash
-sls-private-email-relay$ sam build --use-container
+sls-python3-poetry-template$ sam build --use-container
 ```
 
 The SAM CLI installs dependencies defined in `hello_world/requirements.txt`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
@@ -98,14 +98,14 @@ Test a single function by invoking it directly with a test event. An event is a 
 Run functions locally and invoke them with the `sam local invoke` command.
 
 ```bash
-sls-private-email-relay$ sam local invoke HelloWorldFunction --event events/event.json
+sls-python3-poetry-template$ sam local invoke HelloWorldFunction --event events/event.json
 ```
 
 The SAM CLI can also emulate your application's API. Use the `sam local start-api` to run the API locally on port 3000.
 
 ```bash
-sls-private-email-relay$ sam local start-api
-sls-private-email-relay$ curl http://localhost:3000/
+sls-python3-poetry-template$ sam local start-api
+sls-python3-poetry-template$ curl http://localhost:3000/
 ```
 
 The SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path.
@@ -130,7 +130,7 @@ To simplify troubleshooting, SAM CLI has a command called `sam logs`. `sam logs`
 `NOTE`: This command works for all AWS Lambda functions; not just the ones you deploy using SAM.
 
 ```bash
-sls-private-email-relay$ sam logs -n HelloWorldFunction --stack-name sls-private-email-relay --tail
+sls-python3-poetry-template$ sam logs -n HelloWorldFunction --stack-name sls-python3-poetry-template --tail
 ```
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
@@ -140,12 +140,12 @@ You can find more information and examples about filtering Lambda function logs 
 Tests are defined in the `tests` folder in this project. Use PIP to install the test dependencies and run tests.
 
 ```bash
-sls-private-email-relay$ pip install -r tests/requirements.txt --user
+sls-python3-poetry-template$ pip install -r tests/requirements.txt --user
 # unit test
-sls-private-email-relay$ python -m pytest tests/unit -v
+sls-python3-poetry-template$ python -m pytest tests/unit -v
 # integration test, requiring deploying the stack first.
 # Create the env variable AWS_SAM_STACK_NAME with the name of the stack we are testing
-sls-private-email-relay$ AWS_SAM_STACK_NAME="sls-private-email-relay" python -m pytest tests/integration -v
+sls-python3-poetry-template$ AWS_SAM_STACK_NAME="sls-python3-poetry-template" python -m pytest tests/integration -v
 ```
 
 ### Cleanup
@@ -153,7 +153,7 @@ sls-private-email-relay$ AWS_SAM_STACK_NAME="sls-private-email-relay" python -m 
 To delete the sample application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
 
 ```bash
-sam delete --stack-name "sls-private-email-relay"
+sam delete --stack-name "sls-python3-poetry-template"
 ```
 
 ## Resources
